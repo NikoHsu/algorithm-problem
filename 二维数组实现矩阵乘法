@@ -1,0 +1,39 @@
+#include <stdio.h>   //矩阵乘法 电气181许志强 1701300106
+int main()
+{
+	int a[2][3] = { {1,2,3},{4,5,6} };
+	int b[3][1] = { {7},{8},{9} };
+	int c[2][1],i,j,m,n,temp;
+	printf("array a:\n");
+	for (i = 0; i <= 1; i++)            //处理a数组中的一行中各元素
+	{
+		for (j = 0; j <= 2; j++)        //处理a数组中某一列中各元素
+		{
+			printf("%5d", a[i][j]);    //输出a数组
+		}
+		printf("\n");
+	}
+	printf("array b:\n");                
+	for (m = 0; m <= 2; m++)            //处理b数组中的一行中各元素
+	{
+		for (n = 0; n <1; n++)        //处理b数组中某一列中各元素
+		{
+			printf("%5d", b[m][n]);    //输出b数组
+		}
+		printf("\n");
+	}
+	printf("\narray c:\n");
+	for (i = 0; i <= 1; i++)            //处理a数组中的一行中各元素
+	{
+		c[i][0] = 0;                     //初始化c数组内元素
+		for (j=0,m=0; j<=2,m<=2; j++,m++)        //求c数组第i行的元素
+		{
+			temp= (a[i][j])*(b[m][0]);
+			c[i][0] += temp;
+		}
+		printf("%d\n", c[i][0]);    //输出c数组
+		
+	}
+	getchar();
+	return 0;
+}
